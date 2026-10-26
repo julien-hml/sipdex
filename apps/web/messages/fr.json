@@ -6,7 +6,8 @@
   "retry": "Réessayer",
   "nav": {
     "label": "Navigation principale",
-    "home": "Accueil"
+    "home": "Accueil",
+    "profile": "Profil"
   },
   "home": {
     "title": "Boissons",
@@ -36,5 +37,36 @@
     "back": "Toutes les boissons",
     "notFound": "Cette boisson n'existe pas",
     "countries": "{count, plural, one {Disponible dans # pays} other {Disponible dans # pays}}"
+  },
+  "auth": {
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "signIn": {
+      "title": "Connexion",
+      "description": "Suivez les boissons que vous avez goûtées.",
+      "submit": "Se connecter",
+      "success": "Connecté"
+    },
+    "signUp": {
+      "title": "Créer un compte",
+      "description": "Commencez votre propre collection de boissons.",
+      "submit": "Créer un compte",
+      "success": "Compte créé, veuillez vous connecter"
+    },
+    "toggleToSignUp": "Pas de compte ? Inscrivez-vous",
+    "toggleToSignIn": "Vous avez déjà un compte ? Connectez-vous",
+    "errors": {
+      "emailInvalid": "Saisissez une adresse e-mail valide",
+      "passwordRequired": "Veuillez saisir votre mot de passe",
+      "passwordMin": "Le mot de passe doit contenir au moins 8 caractères",
+      "passwordWeak": "Le mot de passe doit contenir une minuscule, une majuscule, un chiffre et un caractère spécial",
+      "passwordMismatch": "Les mots de passe ne correspondent pas"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "signedInAs": "Connecté en tant que {email}",
+    "logout": "Se déconnecter"
   }
 }

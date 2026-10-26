@@ -34,6 +34,9 @@ export default [
       complexity: "off",
       "func-style": "off",
       "@typescript-eslint/no-unnecessary-condition": "off",
+      "@typescript-eslint/array-type": "off",
+      "no-implicit-coercion": "off",
+      eqeqeq: "off",
     },
   },
   {
