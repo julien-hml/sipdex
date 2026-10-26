@@ -1,8 +1,7 @@
-import { serve } from "@hono/node-server"
-import { createApp, env, logger } from "@sipdex/api/server"
+import { createApp } from "@sipdex/api/server"
 
-const app = createApp()
+// Vercel picks up this default export and serves it as a function; locally,
+// src/dev.ts wraps it in a Node server.
+const app: ReturnType<typeof createApp> = createApp()
 
-serve({ fetch: app.fetch, port: env.PORT }, (info) => {
-  logger.info(`🚀 sipdex-backend listening on http://localhost:${info.port}`)
-})
+export default app
