@@ -12,3 +12,9 @@ android
 pnpm-lock.yaml
 .husky/_
 expo-env.d.ts
+# next.js / playwright output
+**/.next
+**/next-env.d.ts
+**/playwright-report
+**/test-results
+apps/web/tests/e2e/screenshots

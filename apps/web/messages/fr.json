@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Sipdex",
+    "description": "Cataloguez les boissons du monde entier et suivez celles que vous avez goûtées."
+  },
+  "retry": "Réessayer",
+  "nav": {
+    "label": "Navigation principale",
+    "home": "Accueil"
+  },
+  "home": {
+    "title": "Boissons",
+    "subtitle": "Tous les parfums du catalogue, de toutes les marques et de tous les pays.",
+    "empty": "Aucune boisson pour le moment"
+  },
+  "drink": {
+    "markTasted": "Marquer comme goûté",
+    "markUntasted": "Marquer comme non goûté",
+    "moreCountries": "+{count}"
+  },
+  "errors": {
+    "default": "Une erreur est survenue",
+    "INTERNAL_ERROR": "Une erreur serveur est survenue",
+    "NOT_FOUND": "Introuvable",
+    "BAD_REQUEST": "Requête invalide",
+    "CONFLICT": "Cet élément existe déjà",
+    "UNAUTHORIZED": "Veuillez vous connecter",
+    "FORBIDDEN": "Vous n'avez pas la permission",
+    "drink": {
+      "BAD_REQUEST": "Veuillez sélectionner une marque et un pays valides",
+      "CONFLICT": "Ce parfum existe déjà"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Sipdex",
+    "description": "Catalogue drinks from around the world and track the ones you've tasted."
+  },
+  "retry": "Retry",
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home"
+  },
+  "home": {
+    "title": "Drinks",
+    "subtitle": "Every flavour in the catalogue, from every brand and country.",
+    "empty": "No drinks yet"
+  },
+  "drink": {
+    "markTasted": "Mark as tasted",
+    "markUntasted": "Mark as not tasted",
+    "moreCountries": "+{count}"
+  },
+  "errors": {
+    "default": "Something went wrong",
+    "INTERNAL_ERROR": "A server error occurred",
+    "NOT_FOUND": "Not found",
+    "BAD_REQUEST": "Invalid request",
+    "CONFLICT": "This already exists",
+    "UNAUTHORIZED": "Please sign in",
+    "FORBIDDEN": "You do not have permission",
+    "drink": {
+      "BAD_REQUEST": "Please select a valid brand and country",
+      "CONFLICT": "This flavour already exists"
+    }
+  }
+}
