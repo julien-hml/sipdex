@@ -10,6 +10,7 @@ you've tasted.
 | -------------------------------- | ----------------------------------------------------- |
 | [`apps/backend`](./apps/backend) | REST API host (Hono + @hono/node-server)              |
 | [`apps/mobile`](./apps/mobile)   | React Native / Expo app                               |
+| [`apps/web`](./apps/web)         | Next.js web app (shadcn/Base UI, TanStack, next-intl) |
 | [`packages/api`](./packages/api) | Shared API (Hono, better-auth, Drizzle, Postgres, S3) |
 
 ## Getting started
@@ -23,7 +24,7 @@ pnpm docker:up                        # start Postgres + RustFS (S3)
 # storage bucket" for console / AWS CLI / mc instructions.
 pnpm db:migrate                       # create tables
 pnpm seed                             # seed brands, countries, drinks, users (needs the bucket)
-pnpm dev                              # run the backend API + mobile app
+pnpm dev                              # run the backend API, mobile app and web app (:3001)
 ```
 
 ## Environments

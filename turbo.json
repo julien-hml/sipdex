@@ -29,6 +29,7 @@
     "S3_SECRET_ACCESS_KEY",
     "S3_PUBLIC_URL",
     "LOG_LEVEL",
-    "EXPO_PUBLIC_API_URL"
+    "EXPO_PUBLIC_API_URL",
+    "API_URL"
   ]
 }

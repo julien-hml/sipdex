@@ -118,3 +118,46 @@ jobs:
 
       - name: Integration tests
         run: pnpm run test:integration
+
+  test-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/setup
+
+      # Vitest: unit tests (node) + component integration tests (jsdom).
+      - name: Web unit & integration tests
+        run: pnpm run test:web
+
+  test-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/setup
+
+      - name: Install Playwright browser
+        run: pnpm --filter @sipdex/web test:e2e:install
+
+      # Builds and starts the web app; the API is mocked at the network layer.
+      - name: End-to-end tests
+        run: pnpm run test:e2e
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: apps/web/playwright-report/
+          retention-days: 14
+
+      - name: Upload screenshots
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-screenshots
+          path: apps/web/tests/e2e/screenshots/
+          retention-days: 14

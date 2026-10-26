@@ -1,0 +1,26 @@
+{
+  "extends": "@sipdex/typescript/base.json",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "jsx": "react-jsx",
+    "checkJs": false,
+    "noUncheckedIndexedAccess": false,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/messages/*": ["./messages/*"]
+    },
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "include": [
+    "next-env.d.ts",
+    "src",
+    "tests",
+    "messages",
+    "*.ts",
+    "*.mts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", ".next"]
+}

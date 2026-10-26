@@ -15,3 +15,5 @@ pnpm test:unit || exit 1
 
 echo "→ api tests"
 pnpm test:api || exit 1
+echo "→ web tests"
+pnpm test:web || exit 1
