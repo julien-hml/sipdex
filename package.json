@@ -1,9 +1,10 @@
 {
   "name": "sipdex",
   "private": true,
-  "packageManager": "pnpm@11.12.0",
+  "packageManager": "pnpm@11.28.8",
   "scripts": {
     "dev": "turbo dev",
+    "build": "turbo build",
     "start": "pnpm --filter @sipdex/backend start",
     "mobile": "pnpm --filter @sipdex/mobile start",
     "mobile:ios": "pnpm --filter @sipdex/mobile ios",
