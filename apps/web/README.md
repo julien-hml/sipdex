@@ -19,7 +19,7 @@ pnpm web          # from the repo root, or `pnpm dev` here — http://localhost:
 ```
 
 The browser only talks to this app: `next.config.ts` rewrites `/api/*` to the
-Hono backend (`API_URL`, default `http://localhost:3000`), so better-auth
+Hono backend (`NEXT_PUBLIC_API_URL`, default `http://localhost:3000`), so better-auth
 cookies are first-party. Add `http://localhost:3001` to the backend's
 `TRUSTED_ORIGINS`.
 

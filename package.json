@@ -28,7 +28,7 @@
     "seed": "pnpm --filter @sipdex/api seed",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
-    "env-symlink": "ln -sf $PWD/.env ./apps/backend/.env && ln -sf $PWD/.env ./packages/api/.env",
+    "env-symlink": "ln -sf $PWD/.env ./apps/backend/.env && ln -sf $PWD/.env ./packages/api/.env && ln -sf $PWD/.env ./apps/web/.env",
     "prepare": "husky"
   },
   "devDependencies": {

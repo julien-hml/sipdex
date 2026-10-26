@@ -30,6 +30,6 @@
     "S3_PUBLIC_URL",
     "LOG_LEVEL",
     "EXPO_PUBLIC_API_URL",
-    "API_URL"
+    "NEXT_PUBLIC_API_URL"
   ]
 }
