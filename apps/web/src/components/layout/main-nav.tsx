@@ -1,20 +1,23 @@
 "use client"
 
 import { cn } from "cn"
-import { House, type LucideIcon, User } from "lucide-react"
+import { House, type LucideIcon, Shield, User } from "lucide-react"
 import { useTranslations } from "next-intl"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useIsAdmin } from "@/hooks/use-is-admin"
 
 type NavItem = {
   href: string
-  label: "home" | "profile"
+  label: "home" | "profile" | "admin"
   icon: LucideIcon
+  adminOnly?: boolean
 }
 
 const NAV_ITEMS: NavItem[] = [
   { href: "/", label: "home", icon: House },
   { href: "/profile", label: "profile", icon: User },
+  { href: "/admin", label: "admin", icon: Shield, adminOnly: true },
 ]
 
 const isActive = (pathname: string, href: string) =>
@@ -23,10 +26,12 @@ const isActive = (pathname: string, href: string) =>
 export const MainNav = () => {
   const t = useTranslations("nav")
   const pathname = usePathname()
+  const isAdmin = useIsAdmin()
+  const items = NAV_ITEMS.filter(({ adminOnly }) => !adminOnly || isAdmin)
 
   return (
     <nav aria-label={t("label")} className="ml-auto flex items-center gap-1">
-      {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
+      {items.map(({ href, label, icon: Icon }) => {
         const active = isActive(pathname, href)
 
         return (
