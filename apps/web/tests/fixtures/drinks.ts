@@ -26,6 +26,15 @@ const COUNTRIES = {
   US: { name: "United States of America", code: "US" },
 } satisfies Record<string, FixtureCountry>
 
+// As `GET /api/countries` returns them (full rows).
+export const fixtureCountries = Object.values(COUNTRIES).map((country) => ({
+  id: `country-${country.code}`,
+  ...country,
+  createdAt: "2026-10-01T12:00:00.000Z",
+  updatedAt: "2026-10-01T12:00:00.000Z",
+  deletedAt: null,
+}))
+
 const brand = (id: string, name: string, slug: string) => ({
   id,
   name,

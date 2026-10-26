@@ -1,5 +1,10 @@
 import type { Page, Request, Route } from "@playwright/test"
-import { FIXTURE_IMAGE_HOST, fixtureDrinks } from "../../fixtures/drinks"
+import {
+  FIXTURE_IMAGE_HOST,
+  fixtureBrands,
+  fixtureCountries,
+  fixtureDrinks,
+} from "../../fixtures/drinks"
 import { fixtureImage } from "./images"
 
 type Role = "user" | "admin"
@@ -70,6 +75,8 @@ export const mockApi = async (page: Page, options: MockApiOptions = {}) => {
       return { success: true }
     },
     "GET /api/drinks": () => ({ result: fixtureDrinks.map(drink) }),
+    "GET /api/brands": () => ({ result: fixtureBrands }),
+    "GET /api/countries": () => ({ result: fixtureCountries }),
     ...Object.fromEntries(
       fixtureDrinks.map((item) => [
         `GET /api/drinks/${item.id}`,
