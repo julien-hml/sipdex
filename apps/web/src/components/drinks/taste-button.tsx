@@ -14,11 +14,17 @@ type TasteButtonProps = {
   id: string
   tasted: boolean | null
   className?: string
+  withLabel?: boolean
 }
 
 type CachedDrinks = Parameters<typeof setTastedInCache>[0]
 
-export const TasteButton = ({ id, tasted, className }: TasteButtonProps) => {
+export const TasteButton = ({
+  id,
+  tasted,
+  className,
+  withLabel = false,
+}: TasteButtonProps) => {
   const t = useTranslations("drink")
   const { onError } = useError("drink")
   const queryClient = useQueryClient()
@@ -46,19 +52,38 @@ export const TasteButton = ({ id, tasted, className }: TasteButtonProps) => {
 
   const mutation = tasted ? untaste : taste
   const label = t(tasted ? "markUntasted" : "markTasted")
+  const icon = <CupSoda className={cn("size-5", tasted && "fill-current")} />
+  const sharedProps = {
+    disabled: mutation.isPending,
+    onClick: () => mutation.mutate({ param: { id } }),
+    "aria-pressed": tasted,
+  }
+
+  // A toggle with a visible, constant label: `aria-pressed` carries the state.
+  if (withLabel) {
+    return (
+      <Button
+        variant={tasted ? "default" : "outline"}
+        size="lg"
+        className={cn("px-4", className)}
+        {...sharedProps}
+      >
+        {icon}
+        {t("tasted")}
+      </Button>
+    )
+  }
 
   return (
     <Button
       variant="ghost"
       size="icon-lg"
-      disabled={mutation.isPending}
-      onClick={() => mutation.mutate({ param: { id } })}
       aria-label={label}
-      aria-pressed={tasted}
       title={label}
       className={cn("relative z-10", className)}
+      {...sharedProps}
     >
-      <CupSoda className={cn("size-5", tasted && "fill-current")} />
+      {icon}
     </Button>
   )
 }

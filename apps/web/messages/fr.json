@@ -16,7 +16,8 @@
   "drink": {
     "markTasted": "Marquer comme goûté",
     "markUntasted": "Marquer comme non goûté",
-    "moreCountries": "+{count}"
+    "moreCountries": "+{count}",
+    "tasted": "Goûté"
   },
   "errors": {
     "default": "Une erreur est survenue",
@@ -30,5 +31,10 @@
       "BAD_REQUEST": "Veuillez sélectionner une marque et un pays valides",
       "CONFLICT": "Ce parfum existe déjà"
     }
+  },
+  "drinkDetail": {
+    "back": "Toutes les boissons",
+    "notFound": "Cette boisson n'existe pas",
+    "countries": "{count, plural, one {Disponible dans # pays} other {Disponible dans # pays}}"
   }
 }
