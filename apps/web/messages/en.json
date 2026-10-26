@@ -16,7 +16,8 @@
   "drink": {
     "markTasted": "Mark as tasted",
     "markUntasted": "Mark as not tasted",
-    "moreCountries": "+{count}"
+    "moreCountries": "+{count}",
+    "tasted": "Tasted"
   },
   "errors": {
     "default": "Something went wrong",
@@ -30,5 +31,10 @@
       "BAD_REQUEST": "Please select a valid brand and country",
       "CONFLICT": "This flavour already exists"
     }
+  },
+  "drinkDetail": {
+    "back": "All drinks",
+    "notFound": "This drink doesn't exist",
+    "countries": "{count, plural, one {Available in # country} other {Available in # countries}}"
   }
 }

@@ -55,14 +55,19 @@ const fulfill = (route: Route, value: unknown) => {
 // answered here, so the app runs without a database or object storage.
 export const mockApi = async (page: Page, options: MockApiOptions = {}) => {
   const { role = null, routes = {} } = options
+  const drinks = fixtureDrinks.map((drink) => ({
+    ...drink,
+    tasted: role ? false : null,
+  }))
   const defaults: Routes = {
     "GET /api/auth/get-session": () => (role ? fixtureSession(role) : null),
-    "GET /api/drinks": () => ({
-      result: fixtureDrinks.map((drink) => ({
-        ...drink,
-        tasted: role ? false : null,
-      })),
-    }),
+    "GET /api/drinks": () => ({ result: drinks }),
+    ...Object.fromEntries(
+      drinks.map((drink) => [
+        `GET /api/drinks/${drink.id}`,
+        () => ({ result: drink }),
+      ]),
+    ),
   }
   const handlers = { ...defaults, ...routes }
 

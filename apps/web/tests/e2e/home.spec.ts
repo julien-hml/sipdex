@@ -52,6 +52,7 @@ test.describe("home", () => {
     await page.getByRole("link", { name: "Grape" }).click()
 
     await expect(page).toHaveURL("/drinks/drink-grape")
+    await expect(page.getByRole("heading", { name: "Grape" })).toBeVisible()
   })
 
   test("is translated in French", async ({ browser }) => {
