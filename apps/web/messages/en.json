@@ -7,7 +7,8 @@
   "nav": {
     "label": "Main navigation",
     "home": "Home",
-    "profile": "Profile"
+    "profile": "Profile",
+    "settings": "Settings"
   },
   "home": {
     "title": "Drinks",
@@ -68,5 +69,22 @@
     "title": "Profile",
     "signedInAs": "Signed in as {email}",
     "logout": "Log out"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Personalise how Sipdex looks on this device.",
+    "theme": {
+      "label": "Theme",
+      "description": "Follow your system or pick a mode.",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "language": {
+      "label": "Language",
+      "description": "Used for the whole interface and country names.",
+      "en": "English",
+      "fr": "Français"
+    }
   }
 }

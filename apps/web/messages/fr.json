@@ -7,7 +7,8 @@
   "nav": {
     "label": "Navigation principale",
     "home": "Accueil",
-    "profile": "Profil"
+    "profile": "Profil",
+    "settings": "Paramètres"
   },
   "home": {
     "title": "Boissons",
@@ -68,5 +69,22 @@
     "title": "Profil",
     "signedInAs": "Connecté en tant que {email}",
     "logout": "Se déconnecter"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Personnalisez l'apparence de Sipdex sur cet appareil.",
+    "theme": {
+      "label": "Thème",
+      "description": "Suivez votre système ou choisissez un mode.",
+      "system": "Système",
+      "light": "Clair",
+      "dark": "Sombre"
+    },
+    "language": {
+      "label": "Langue",
+      "description": "Utilisée pour toute l'interface et les noms de pays.",
+      "en": "English",
+      "fr": "Français"
+    }
   }
 }
