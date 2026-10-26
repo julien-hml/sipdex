@@ -1,18 +1,21 @@
 "use client"
 
 import { cn } from "cn"
-import { House, type LucideIcon } from "lucide-react"
+import { House, type LucideIcon, User } from "lucide-react"
 import { useTranslations } from "next-intl"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 type NavItem = {
   href: string
-  label: "home"
+  label: "home" | "profile"
   icon: LucideIcon
 }
 
-const NAV_ITEMS: NavItem[] = [{ href: "/", label: "home", icon: House }]
+const NAV_ITEMS: NavItem[] = [
+  { href: "/", label: "home", icon: House },
+  { href: "/profile", label: "profile", icon: User },
+]
 
 const isActive = (pathname: string, href: string) =>
   href === "/" ? pathname === "/" : pathname.startsWith(href)

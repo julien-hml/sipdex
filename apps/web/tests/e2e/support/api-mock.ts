@@ -53,19 +53,27 @@ const fulfill = (route: Route, value: unknown) => {
 
 // Replaces the backend with in-memory fixtures. Everything under `/api` is
 // answered here, so the app runs without a database or object storage.
+// Returns the mutable session state: set `role` to sign the visitor in or out.
 export const mockApi = async (page: Page, options: MockApiOptions = {}) => {
-  const { role = null, routes = {} } = options
-  const drinks = fixtureDrinks.map((drink) => ({
-    ...drink,
-    tasted: role ? false : null,
-  }))
+  const { routes = {} } = options
+  const state = { role: options.role ?? null }
+  const drink = (item: (typeof fixtureDrinks)[number]) => ({
+    ...item,
+    tasted: state.role ? false : null,
+  })
   const defaults: Routes = {
-    "GET /api/auth/get-session": () => (role ? fixtureSession(role) : null),
-    "GET /api/drinks": () => ({ result: drinks }),
+    "GET /api/auth/get-session": () =>
+      state.role ? fixtureSession(state.role) : null,
+    "POST /api/auth/sign-out": () => {
+      state.role = null
+
+      return { success: true }
+    },
+    "GET /api/drinks": () => ({ result: fixtureDrinks.map(drink) }),
     ...Object.fromEntries(
-      drinks.map((drink) => [
-        `GET /api/drinks/${drink.id}`,
-        () => ({ result: drink }),
+      fixtureDrinks.map((item) => [
+        `GET /api/drinks/${item.id}`,
+        () => ({ result: drink(item) }),
       ]),
     ),
   }
@@ -92,4 +100,6 @@ export const mockApi = async (page: Page, options: MockApiOptions = {}) => {
 
     return fulfill(route, handlers[key](request))
   })
+
+  return state
 }
